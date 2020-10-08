@@ -6,6 +6,8 @@ import time
 from settings import *
 from colors import *
 
+player_list = list()
+
 def main():
 
     # init
@@ -31,14 +33,21 @@ def main():
     y = (Y_OFF - text.get_height()) // 2
     win.blit(text, (x, y))
 
+    # setting variables
+    
+
     def reset():
+        global player_list
         player_list = [INITIAL_SUM] * PLAYERS_NOS
         
     def draw():
         pass
 
     def bet():
-        pass
+        for i in range(len(player_list)):
+            for j in range(i, len(player_list)):
+                pass
+
 
     start = False
 
