@@ -9,3 +9,4 @@ TEXT = "Price's Law Demo"
 PLAYERS_NOS = 25
 INITIAL_SUM = 10
 BET_AMOUNT = 1
+AXIS_OFF = 30

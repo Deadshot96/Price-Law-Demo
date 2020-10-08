@@ -8,6 +8,12 @@ from colors import *
 
 player_list = list()
 
+X_AXIS = ((AXIS_OFF, GRAPH_HEIGHT - AXIS_OFF),\
+    (GRAPH_WIDTH - AXIS_OFF, GRAPH_HEIGHT - AXIS_OFF))
+
+Y_AXIS = ((AXIS_OFF, AXIS_OFF), (AXIS_OFF, GRAPH_HEIGHT - AXIS_OFF))
+
+
 def main():
 
     # init
@@ -43,9 +49,8 @@ def main():
     def draw():
         global player_list
 
-        pygame.draw.line(graphWin, CORN_FLOWER_BLUE, (20, 20), (400, 400), 1)
-
-
+        pygame.draw.line(graphWin, BLACK, X_AXIS[0], X_AXIS[1], 2)
+        pygame.draw.line(graphWin, BLACK, Y_AXIS[0], Y_AXIS[1], 2)
 
         pygame.display.update()
 
