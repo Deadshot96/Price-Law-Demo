@@ -32,8 +32,11 @@ def main():
     win.blit(text, (x, y))
 
     def reset():
-        player_list = list()
+        player_list = [INITIAL_SUM] * PLAYERS_NOS
         
+    def draw():
+        pass
+
 
     start = False
 
