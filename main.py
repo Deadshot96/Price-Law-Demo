@@ -22,7 +22,7 @@ def main():
     pygame.display.set_caption("Price's Law")
     graphWin = win.subsurface((X_OFF, Y_OFF, GRAPH_WIDTH, GRAPH_HEIGHT))
     win.fill(MID_BLACK)
-    graphWin.fill(SKYBLUE)
+    graphWin.fill(MINT_CREAM)
 
     # Font init
     font = pygame.font.SysFont("comicsansms", 40)
@@ -44,9 +44,21 @@ def main():
         pass
 
     def bet():
-        for i in range(len(player_list)):
-            for j in range(i, len(player_list)):
-                pass
+        global player_list
+        for i in range(len(player_list) - 1):
+            for j in range(i + 1, len(player_list)):
+
+                if player_list[i] == 0 or player_list[j] == 0:
+                    continue
+
+                bet = random.random()
+
+                if bet < 0.5:
+                    player_list[i] += 1
+                    player_list[j] -= 1
+                else:
+                    player_list[i] -= 1
+                    player_list[j] += 1
 
 
     start = False
@@ -54,7 +66,7 @@ def main():
     run = True
     while run:
         clock.tick(FPS)
-
+        global player_list
         pygame.display.update()
 
         for event in pygame.event.get():
@@ -73,7 +85,9 @@ def main():
                     reset()
         
         if start:
-            pass
+            print(player_list)
+            bet()
+            
 
     
     pygame.font.quit()
