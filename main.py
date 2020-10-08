@@ -37,6 +37,8 @@ def main():
     def draw():
         pass
 
+    def bet():
+        pass
 
     start = False
 
