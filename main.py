@@ -32,7 +32,8 @@ def main():
     win.blit(text, (x, y))
 
     def reset():
-        pass
+        player_list = list()
+        
 
     start = False
 

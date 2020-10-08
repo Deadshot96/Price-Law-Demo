@@ -6,3 +6,6 @@ X_OFF = (WIDTH - GRAPH_WIDTH) // 2
 Y_OFF = int((HEIGHT - GRAPH_HEIGHT) * 0.8)
 FPS = 60
 TEXT = "Price's Law Demo"
+PLAYERS_NO = 50
+INIT_SUM = 10
+BET_AMOUNT = 1
