@@ -41,7 +41,13 @@ def main():
         player_list = [INITIAL_SUM] * PLAYERS_NOS
         
     def draw():
-        pass
+        global player_list
+
+        pygame.draw.line(graphWin, CORN_FLOWER_BLUE, (20, 20), (400, 400), 1)
+
+
+
+        pygame.display.update()
 
     def bet():
         global player_list
@@ -85,10 +91,10 @@ def main():
                     reset()
         
         if start:
-            print(player_list)
+            # print(player_list)
             bet()
             
-
+        draw()
     
     pygame.font.quit()
     pygame.quit()
