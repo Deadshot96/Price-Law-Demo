@@ -117,6 +117,7 @@ def main():
 
                 if keys[pygame.K_ESCAPE]:
                     reset()
+                    start = False
         
         if start:
             print(player_list)
