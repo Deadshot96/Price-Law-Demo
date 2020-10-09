@@ -8,6 +8,7 @@ from colors import *
 
 player_list = list()
 
+
 X_AXIS = ((AXIS_OFF, GRAPH_HEIGHT - AXIS_OFF),\
     (GRAPH_WIDTH - AXIS_OFF, GRAPH_HEIGHT - AXIS_OFF))
 
@@ -96,7 +97,7 @@ def main():
                     reset()
         
         if start:
-            # print(player_list)
+            print(player_list)
             bet()
             
         draw()
