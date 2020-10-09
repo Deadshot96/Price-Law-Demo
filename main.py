@@ -70,7 +70,7 @@ def main():
             val = hist[i]
 
             if i < MAX_RANGE:
-                x = AXIS_OFF + GRP_X_MUL * (i + 1) - GRP_WID
+                x = AXIS_OFF + GRP_X_MUL * (i + 1) - GRP_WID + 1
                 w = GRP_WID
                 h = val * GRP_Y_MUL
                 y = GRAPH_HEIGHT - AXIS_OFF - h
