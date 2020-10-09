@@ -69,7 +69,9 @@ def main():
         for i in sorted(hist):
             val = hist[i]
 
-            if val < MAX_RANGE
+            if val < MAX_RANGE:
+                pass
+
 
         pygame.display.update()
 
@@ -109,6 +111,8 @@ def main():
                 keys = pygame.key.get_pressed()
 
                 if keys[pygame.K_SPACE]:
+                    if len(player_list) == 0:
+                        reset()
                     start = not start
 
                 if keys[pygame.K_ESCAPE]:
