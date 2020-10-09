@@ -60,7 +60,7 @@ def main():
         
     def draw():
         global player_list
-
+        graphWin.fill(MINT_CREAM)
         hist = histogarm()
 
         pygame.draw.line(graphWin, BLACK, X_AXIS[0], X_AXIS[1], 2)
@@ -69,9 +69,13 @@ def main():
         for i in sorted(hist):
             val = hist[i]
 
-            if val < MAX_RANGE:
-                pass
-
+            if i < MAX_RANGE:
+                x = AXIS_OFF + GRP_X_MUL * (i + 1) - GRP_WID
+                w = GRP_WID
+                h = val * GRP_Y_MUL
+                y = GRAPH_HEIGHT - AXIS_OFF - h
+                
+                pygame.draw.rect(graphWin, ORCHID, (x, y, w, h), 0)
 
         pygame.display.update()
 
@@ -94,7 +98,7 @@ def main():
 
 
     start = False
-
+    reset()
     run = True
     while run:
         clock.tick(FPS)
@@ -111,8 +115,6 @@ def main():
                 keys = pygame.key.get_pressed()
 
                 if keys[pygame.K_SPACE]:
-                    if len(player_list) == 0:
-                        reset()
                     start = not start
 
                 if keys[pygame.K_ESCAPE]:
@@ -120,7 +122,7 @@ def main():
                     start = False
         
         if start:
-            print(player_list)
+            # print(player_list)
             bet()
             
         draw()
