@@ -46,12 +46,30 @@ def main():
     def reset():
         global player_list
         player_list = [INITIAL_SUM] * PLAYERS_NOS
+
+    def histogarm():
+        global player_list
+        
+        s = set(player_list)
+        d = dict()
+        for i in s:
+            d[i] = player_list.count(i)
+
+        return d
+
         
     def draw():
         global player_list
 
+        hist = histogarm()
+
         pygame.draw.line(graphWin, BLACK, X_AXIS[0], X_AXIS[1], 2)
         pygame.draw.line(graphWin, BLACK, Y_AXIS[0], Y_AXIS[1], 2)
+
+        for i in sorted(hist):
+            val = hist[i]
+
+            if val < MAX_RANGE
 
         pygame.display.update()
 
@@ -91,7 +109,7 @@ def main():
                 keys = pygame.key.get_pressed()
 
                 if keys[pygame.K_SPACE]:
-                    start = True
+                    start = not start
 
                 if keys[pygame.K_ESCAPE]:
                     reset()
